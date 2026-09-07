@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestión de Residentes — Centro de Rehabilitación</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" id="favicon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231d6f5c'/></svg>">
+</head>
+<body>
+
+  <!-- Pantalla de acceso: se muestra mientras no hay sesión iniciada -->
+  <div id="login-root" hidden></div>
+
+  <div id="app" hidden>
+
+    <!-- ---------- Barra lateral ---------- -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo"><img id="logo-centro" alt="Logotipo del centro"></div>
+        <div style="min-width:0">
+          <div class="brand-name" id="nombre-centro">Centro de Rehabilitación</div>
+          <div class="brand-sub" id="lema-centro">Gestión de residentes</div>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav"></nav>
+
+      <div class="sidebar-foot">
+        <div id="sesion"></div>
+        <div class="sidebar-botones">
+          <button class="btn btn-sm btn-ghost" data-action="tema" title="Cambiar tema claro / oscuro">🌓 Tema</button>
+          <button class="btn btn-sm btn-ghost" data-action="cerrar-sesion" title="Cerrar sesión">⏻ Salir</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ---------- Contenido principal ---------- -->
+    <main class="main">
+      <header class="topbar">
+        <button class="btn btn-ghost btn-icon no-print" data-action="menu"
+                id="btn-menu" aria-label="Abrir menú">☰</button>
+        <div style="min-width:0">
+          <h1 id="titulo">Dashboard</h1>
+          <div class="sub" id="subtitulo"></div>
+        </div>
+        <div class="topbar-actions no-print" id="acciones-vista"></div>
+      </header>
+
+      <div class="view" id="vista"></div>
+    </main>
+  </div>
+
+  <!-- Fondo oscuro que cubre el contenido cuando el menú se abre en móvil -->
+  <div id="scrim" data-action="cerrar-menu" hidden></div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+
+  <!-- ---------- Scripts (orden relevante) ---------- -->
+  <script src="js/logo.js" charset="utf-8"></script>
+  <script src="js/version.js" charset="utf-8"></script>
+  <script src="js/utils.js" charset="utf-8"></script>
+  <script src="js/db.js" charset="utf-8"></script>
+  <!-- app.js declara Vistas y Acciones: debe ir antes de los módulos que
+       registran entradas en ellos. -->
+  <script src="js/app.js" charset="utf-8"></script>
+  <script src="js/alertas.js" charset="utf-8"></script>
+  <script src="js/auth.js" charset="utf-8"></script>
+  <script src="js/nomina.js" charset="utf-8"></script>
+  <script src="js/dashboard.js" charset="utf-8"></script>
+  <script src="js/residentes.js" charset="utf-8"></script>
+  <script src="js/progreso.js" charset="utf-8"></script>
+  <script src="js/conducta.js" charset="utf-8"></script>
+  <script src="js/salidas.js" charset="utf-8"></script>
+  <script src="js/llamadas.js" charset="utf-8"></script>
+  <script src="js/tareas.js" charset="utf-8"></script>
+  <script src="js/reportes.js" charset="utf-8"></script>
+  <script src="js/configuracion.js" charset="utf-8"></script>
+</body>
+</html>
